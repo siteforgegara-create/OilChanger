@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-ui: "Segoe UI", Inter, Arial, system-ui, sans-serif;
+  --font-technical: "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --color-bg: 247 249 248;
+  --color-surface: 255 255 255;
+  --color-text: 18 28 25;
+  --color-muted: 92 107 101;
+  --color-border: 218 227 223;
+  --color-accent: 0 128 96;
+  --color-danger: 220 38 38;
+  --color-success: 22 163 74;
+  --color-warning: 194 111 12;
+}
+
+[data-theme="dark"] {
+  --color-bg: 2 6 23;
+  --color-surface: 15 23 42;
+  --color-text: 248 250 252;
+  --color-muted: 148 163 184;
+  --color-border: 51 65 85;
+  --color-accent: 96 165 250;
+  --color-danger: 248 113 113;
+  --color-success: 74 222 128;
+  --color-warning: 251 191 36;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: rgb(var(--color-bg));
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  font-family: var(--font-ui), system-ui, sans-serif;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+code,
+pre,
+.font-technical {
+  font-family: var(--font-technical), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: oilchanger-v2-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: oilchanger
+      POSTGRES_PASSWORD: oilchanger
+      POSTGRES_DB: oilchanger_v2
+    ports:
+      - "5434:5432"
+    volumes:
+      - oilchanger_v2_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U oilchanger -d oilchanger_v2"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  oilchanger_v2_pgdata:
