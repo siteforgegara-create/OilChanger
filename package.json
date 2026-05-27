@@ -11,6 +11,7 @@
     "test": "vitest run",
     "test:smoke": "tsx scripts/route-smoke.ts",
     "test:watch": "vitest",
+    "postinstall": "prisma generate",
     "db:generate": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/db-generate-safe.ps1",
     "db:migrate:dev": "prisma migrate dev",
     "db:migrate": "prisma migrate deploy",
